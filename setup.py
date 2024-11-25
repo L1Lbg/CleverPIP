@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='CleverPIP',  # Your package name
-    version='0.1.2',  # Initial version
+    version='0.1.3',  # Initial version
     packages=find_packages(),  # Automatically find packages
     install_requires=['packaging'],  # Add dependencies here
     entry_points={
