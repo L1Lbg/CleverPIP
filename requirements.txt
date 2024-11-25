@@ -1,1 +1,2 @@
-packaging==24.2
+# Updated with SmartPIP at 2024-11-25 10:05:52.482464 https://github.com/L1Lbg/SmartPIP 
+django==5.1.3

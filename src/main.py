@@ -2,6 +2,8 @@ import requests
 import sys
 import datetime
 from packaging import version
+import os
+import argparse
 
 def find_packages_versions(package_name:str):
   url = f"https://pypi.org/pypi/{package_name}/json"
@@ -24,9 +26,14 @@ def get_latest_version(package_versions) -> str:
 
 def main(smart_requirements_path:str) -> None:
   # load packages and load as list
-  smart_requirements_txt = open(smart_requirements_path, "r")
+  try:
+    smart_requirements_txt = open(smart_requirements_path, "r")
+  except FileNotFoundError as e:
+    print(e)
+    return
+    
   packages = smart_requirements_txt.readlines()
-  updated_packages:str = f"# Updated with SmartPIP at {datetime.datetime.now()}\n"
+  updated_packages:str = f"# Updated with SmartPIP at {datetime.datetime.now()} https://github.com/L1Lbg/SmartPIP \n"
 
   # loop through packages
   for package in packages:
@@ -65,7 +72,9 @@ def main(smart_requirements_path:str) -> None:
       updated_packages += f"{package}\n"
       continue
 
-  open('requirements.txt', "w").write(updated_packages)
+  requirements_dir = os.path.dirname(smart_requirements_path)  
+  requirements_file_path = os.path.join(requirements_dir, "requirements.txt")  
+  open(requirements_file_path, "w").write(updated_packages)
 
 
   
@@ -73,4 +82,7 @@ def main(smart_requirements_path:str) -> None:
 
 
 if __name__ == "__main__":
-  main(sys.argv[1])
+  parser = argparse.ArgumentParser(description="Path to your smart_requirements.txt file")
+  parser.add_argument('--file', type=str, help='Path to your smart_requirements.txt file', required=True)
+  args = parser.parse_args()
+  main(args.file)
