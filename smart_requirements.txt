@@ -1,3 +1,0 @@
-django==4.latest
-django-cors-headers==4.4.latest
-djangorestframework==latest
