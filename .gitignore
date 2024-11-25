@@ -8,7 +8,7 @@ __pycache__/
 
 requirements.txt
 smart_requirements.txt
-
+api_token.txt
 # Distribution / packaging
 .Python
 build/

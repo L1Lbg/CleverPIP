@@ -1,19 +1,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='SmartPIP',  # Your package name
-    version='0.1.0',  # Initial version
+    name='CleverPIP',  # Your package name
+    version='0.1.2',  # Initial version
     packages=find_packages(),  # Automatically find packages
-    install_requires=[],  # Add dependencies here
+    install_requires=['packaging'],  # Add dependencies here
     entry_points={
         'console_scripts': [
-            'smartpip=src.main:cli',  # 'my_tool' is the CLI command
+            'cleverpip=src.main:cli',  # 'my_tool' is the CLI command
         ],
     },
+    download_url='https://github.com/L1Lbg/CleverPIP/archive/refs/tags/0.1.0.tar.gz',
     author='Luca',
     author_email='luca.baeyens@icloud.com',
     description='A simple PIP tool to automatically upgrade packages to your liking.',
-    url='https://github.com/L1Lbg/SmartPIP',  # Your project URL
+    url='https://github.com/L1Lbg/CleverPIP',  # Your project URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

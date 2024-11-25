@@ -33,7 +33,7 @@ def main(smart_requirements_path:str) -> None:
     return
     
   packages = smart_requirements_txt.readlines()
-  updated_packages:str = f"# Updated with SmartPIP at {datetime.datetime.now()} https://github.com/L1Lbg/SmartPIP \n"
+  updated_packages:str = f"# Updated with CleverPIP at {datetime.datetime.now()} https://github.com/L1Lbg/CleverPIP \n"
 
   # loop through packages
   for package in packages:
