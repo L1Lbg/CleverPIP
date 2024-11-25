@@ -6,22 +6,22 @@
 <h2>Usage</h2>
 <p>
     SmartPIP is a command line tool which only needs one argument, and a file.
-    A 'smart_requirements.txt' (can be called in any way), has to be created. It is very similar to usual pip requirements.txt file but admits some additional parameters on the versioning.
+    A 'smart_requirements.txt' (can be named however you want), has to be created. It is very similar to usual pip requirements.txt file but admits some additional parameters on the versioning.
 </p>
     
 
-<code>
-    smartpip --file path/to/smart_requirements.txt
-</code>
+```
+smartpip --file path/to/smart_requirements.txt
+```
 
 <h2>Example</h2>
 <p>Here is an example of a smart_requirements.txt file</p>
 
-<code>
+```
 django==latest
 djangorestframework==3.latest
 numpy==1.26.latest    
-</code>
+```
 
 <p>
     SmartPIP fragments the versioning and allows you to get the latest of a specific subversion, or directly the latest version out of every one of them. Of course you can still specify a specific version and it will also work.
