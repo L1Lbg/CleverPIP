@@ -57,7 +57,6 @@ def main(smart_requirements_path:str) -> None:
       # get the numerical version before it has to be automatically set to the latest
       num_version = desired_version.replace("latest","").strip()
       candidate_versions = list()
-      print(f"desired hit: {num_version}")
       for version in package_versions:
         # if version matches with first numbers specified by user
         if str(version).strip().startswith(str(num_version)):
@@ -85,4 +84,4 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description="Path to your smart_requirements.txt file")
   parser.add_argument('--file', type=str, help='Path to your smart_requirements.txt file', required=True)
   args = parser.parse_args()
-  main(args.file)
+  main(smart_requirements_path=args.file)
