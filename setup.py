@@ -7,7 +7,7 @@ setup(
     install_requires=[],  # Add dependencies here
     entry_points={
         'console_scripts': [
-            'smartpip=src.main:main',  # 'my_tool' is the CLI command
+            'smartpip=src.main:cli',  # 'my_tool' is the CLI command
         ],
     },
     author='Luca',

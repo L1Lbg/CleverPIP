@@ -80,8 +80,11 @@ def main(smart_requirements_path:str) -> None:
 
 
 
+def cli():
+    parser = argparse.ArgumentParser(description="Path to your smart_requirements.txt file")
+    parser.add_argument('--file', type=str, help='Path to your smart_requirements.txt file', required=True)
+    args = parser.parse_args()
+    main(smart_requirements_path=args.file)
+
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description="Path to your smart_requirements.txt file")
-  parser.add_argument('--file', type=str, help='Path to your smart_requirements.txt file', required=True)
-  args = parser.parse_args()
-  main(smart_requirements_path=args.file)
+    cli()
